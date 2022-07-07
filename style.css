@@ -1,10 +1,16 @@
 :root {
-  --ff-primary: "Trispace", sans-serif;
+  --ff-primary: "Roboto Mono", monospace;
 
+  --ff-banner: var(--ff-primary);
   --ff-body: var(--ff-primary);
+
   --ff-accent: var(--ff-primary);
 
-  --footer-logo: black;
+  --bg-color: black;
+  --color: white;
+  --bg-color-transparent: hsla(0, 0%, 0%, 0.4);
+
+  --footer-logo: var(--color);
 }
 
 /* https://piccalil.li/blog/a-modern-css-reset/ */
@@ -39,11 +45,108 @@ body {
   height: 100%;
 }
 
+html {
+  /* footer support */
+  position: relative;
+  min-height: 100%;
+}
+
 /* Set core body defaults */
 body {
   font-family: var(--ff-body);
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  background-color: var(--bg-color);
+  color: var(--color);
+  /* footer support */
+  margin-bottom: 100px;
+}
+
+main {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100vw;
+  height: 100vh;
+}
+
+em {
+  font-style: italic;
+}
+
+/* LEFT SIDE */
+
+.banner {
+  background-image: url(images/bg.gif);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 40vw;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.banner-text {
+  font-family: var(--ff-banner);
+  font-size: clamp(0.85rem, 5vw - 1.2rem, 5rem);
+  text-align: center;
+  position: relative;
+  padding-left: 0.5vw;
+  top: 29vh;
+  width: min-content;
+  height: min-content;
+  background: var(--bg-color-transparent);
+}
+
+.banner-text {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.05em solid white; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 2.5s steps(13, end), blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+/* RIGHT SIDE */
+
+.signup {
+  width: 60vw;
+  background-color: #000000;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  font-family: var(--ff-body);
+}
+
+.cta {
+  font-size: clamp(0.85rem, 5vw - 0.5rem, 4rem);
+  text-align: center;
+}
+
+.cta-text-content {
+  margin: 24px 0;
+  font-size: clamp(0.85rem, 2vw - 0.25rem, 4rem);
 }
 
 /* A elements that don't have a class get default styles */
@@ -55,7 +158,6 @@ a:not([class]) {
 img,
 picture {
   max-width: 100%;
-  display: block;
 }
 
 /* FOOTER */
@@ -67,15 +169,17 @@ picture {
   display: flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
   gap: 10px;
   width: 100%;
   padding: 10px;
-  font-size: 20px;
+  font-family: var(--ff-body);
+  font-size: clamp(0.7rem, 5vw - 1rem, 1.2rem);
 }
 
 .fa-github {
   color: var(--footer-logo);
-  font-size: 24px;
+  font-size: clamp(0.7rem, 5vw - 1rem, 1.6rem);
   transition: transform 0.3s ease-in-out;
 }
 
