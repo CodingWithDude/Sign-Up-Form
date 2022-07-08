@@ -5,6 +5,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <!-- Container for left 40vw with banner, logo, and title -->
+    <main>
+      <div class="left-banner">
+        <div class="banner">
+          <img src="images/logo.png" alt="Desert Botanical text and logo" />
+        </div>
+        <div class="banner-caption">
+          <p>
+            Photo by
+            <a target="_blank" href="https://unsplash.com/@anniespratt"
+              >Annie Spratt </a
+            >on
+            <a target="_blank" href="https://unsplash.com/photos/8mqOw4DBBSg"
+              >Unsplash</a
+            >
+          </p>
+        </div>
+      </div>
+      <!-- Container for right 60vw with call to action, signup form, login link-->
+      <div class="right-signup">
+        <div class="header">
+          <p>
+            Join us today and stay up to date on all of our future Desert
+            Botanical events and activities. In addition to our monthly
+            newsletter you will also recieve discounts on future admission
+            pricing.
+          </p>
+          <br />
+          <p>
+            Enjoy the <em>beauty</em> of our desert landscapes with Desert
+            Botanical.
+          </p>
+        </div>
+        <div class="signup">
+          <form class="signup-form">
+            <div class="input">
+              <label for="first-name">First name</label>
+              <input type="text" name="first-name" id="first-name" required />
+            </div>
+
+            <div class="input">
+              <label for="last-name">Last name</label>
+              <input type="text" name="last-name" id="last-name" />
+            </div>
+
+            <div class="input">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" required />
+            </div>
+
+            <div class="input">
+              <label for="phone-number">Phone number</label>
+              <input
+                type="text"
+                name="phone-number"
+                id="phone-number"
+                minlength="9"
+                maxlength="9"
+              />
+            </div>
+
+            <div class="input">
+              <label for="password">Password</label>
+              <input type="password" name="password" id="password" required />
+            </div>
+
+            <div class="input">
+              <label for="confirm-password">Confirm password</label>
+              <input
+                type="password"
+                name="confirm-password"
+                id="confirm-password"
+                required
+              />
+            </div>
+          </form>
+        </div>
+        <div class="account">
+          <button class="create-account">Create Account</button>
+          <p>Already have an account? <a href="">Log in</a></p>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
